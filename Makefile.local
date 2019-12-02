@@ -76,14 +76,25 @@ DEBUG = -O2 -g -Wall -Wextra -Wno-sign-compare -Wno-unused-parameter
 
 #CC = gcc
 
-# If you need a different path for libraries:
+# Detect type of Unix-like OS (supports at least Linux and MacOS)
+OS_detected := $(shell uname -s | tr A-Z a-z)
 
-LDFLAGS += -L/usr/lib/X11
+# Path for libraries:
+
+ifeq ($(OS_detected), darwin)
+    LDFLAGS += -L/opt/X11/lib
+else
+    LDFLAGS += -L/usr/lib/X11
+endif
 #LDFLAGS = -non_shared -L/usr/X11/lib
 
-# If you need a different path for include files:
+# Path for include files:
 
-IFLAGS = -I/usr/include/X11
+ifeq ($(OS_detected), darwin)
+    IFLAGS = -I/opt/X11/include
+else
+    IFLAGS = -I/usr/include/X11
+endif
 
 # Re-define this if your X library is strangely named:
 
