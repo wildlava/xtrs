@@ -12,7 +12,9 @@
  * mapped at ports 0xc8-0xcf, plus control registers at 0xc0-0xc1.
  */
 
+#ifndef __APPLE__
 #define _XOPEN_SOURCE 500 /* string.h: strdup() */
+#endif
 
 #include <errno.h>
 #include <string.h>

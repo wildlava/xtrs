@@ -16,7 +16,9 @@
  * TRS32 that I don't need to duplicate.
  */
 
+#ifndef __APPLE__
 #define _XOPEN_SOURCE 500 /* string.h: strdup() */
+#endif
 
 #include "z80.h"
 #include "trs.h"

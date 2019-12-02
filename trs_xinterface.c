@@ -29,7 +29,9 @@
  */
 
 #define _DEFAULT_SOURCE /* string.h: strcasecmp() */
+#ifndef __APPLE__
 #define _XOPEN_SOURCE 500 /* string.h: strdup() */
+#endif
 
 #include <stdio.h>
 #include <fcntl.h>

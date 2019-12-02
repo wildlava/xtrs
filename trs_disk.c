@@ -26,7 +26,9 @@
 #define SIZERETRY 1       /* Retry in different sizes on real_read */
 #define DMK_MARK_IAM 0    /* Mark IAMs in track header; poor idea */
 
+#ifndef __APPLE__
 #define _XOPEN_SOURCE 500 /* signal.h: SA_RESTART */
+#endif
 
 #include "z80.h"
 #include "trs.h"

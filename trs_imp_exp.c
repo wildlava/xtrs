@@ -13,7 +13,9 @@
  *  easier.  
  */
 
+#ifndef __APPLE__
 #define _XOPEN_SOURCE 500 /* ftruncate(), strdup() */
+#endif
 
 #include <stdio.h>
 #include <errno.h>
